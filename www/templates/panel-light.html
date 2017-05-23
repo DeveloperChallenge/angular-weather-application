@@ -1,0 +1,39 @@
+<div class="container"> 
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-sm-offset-3 animated fadeIn text-center text-white" id="weather">
+        <br>
+        <search-form 
+        search="ctrlWeather.fetchData(data)" 
+        error-msg="ctrlWeather.errorMsg"></search-form>
+        <br />
+        <h2>
+            {{ctrlWeather.data.city.name}}
+        </h2>
+         <h4>
+        <img ng-src="{{ctrlWeather.getIconImageUrl(ctrlWeather.data.list[0].weather[0].icon)}}" />
+         {{ctrlWeather.data.list[0].weather[0].description}}</h4>
+
+         <h2>{{ctrlWeather.data.list[0].temp.day | celsius }}&#176;</h2>
+
+
+            <div class="clearfix"></div>
+
+            <week-weather 
+            ng-if="ctrlWeather.data"></week-weather>
+
+
+            <!-- Mode details -->
+
+            <hr/>
+            Today: {{ctrlWeather.data.list[0].weather[0].description}} currently. 
+            It's {{ctrlWeather.data.list[0].temp.eve| celsius}}&#176;; the high today was forcast as 
+            {{ctrlWeather.data.list[0].temp.max| celsius}}&#176;
+            <hr/>
+
+            <footer-weather ng-if="ctrlWeather.data"></footer-weather>
+              <br><br>
+         </div> 
+
+    </div>
+    </div>
+

@@ -1,0 +1,21 @@
+<div class="panel-body">
+        <div>
+            <p class="lead">
+                Humidity: {{ctrlFoo.data[0].humidity}}
+                {{ctrlFoo.data[0].weather[0].main}}
+            </p>
+            <p>
+                <!-- {{useDayForecast.weather[0].description}}&nbsp;&#126;&nbsp; -->
+                High: {{ctrlFoo.data[0].temp.max}}&#176;C&nbsp;&#126;&nbsp;
+                Low: {{ctrlFoo.data[0].temp.min}}&#176;C
+            </p>
+        </div>
+</div>
+    
+    <small>
+            Day: {{ctrlFoo.data[0].temp.day}}&#176;C&nbsp;&#126;&nbsp;
+            Night: {{ctrlFoo.data[0].temp.night}}&#176;C&nbsp;&#126;&nbsp;
+            Pressure: {{ctrlFoo.data[0].pressure}} hPa&nbsp;&#126;&nbsp;
+            Humidity: {{ctrlFoo.data[0].humidity}}%
+    </small>
+

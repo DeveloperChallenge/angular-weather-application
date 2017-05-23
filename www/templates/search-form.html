@@ -1,0 +1,20 @@
+           <div class="alert alert-danger text-center animated fadeInDown" 
+                ng-show="ctrlForm.errorMsg"
+                    >
+            {{ctrlForm.errorMsg}}
+           </div>
+
+            <form name="queryForm" class="animated fadeIn" 
+                    ng-submit="ctrlForm.search({data:ctrlForm.data})" novalidate>
+                <div class="form-group"> 
+                    <input type="text" name="data" 
+                            class="form-control input-lg custom-input" 
+                            ng-model="ctrlForm.data"
+                            placeholder="Enter your location"
+                            ng-pattern="/^[a-zA-Z]/"
+                            autocomplete="false"
+                            autosave="false" 
+                            required>
+                </div>
+                <small class="help" ng-show="queryForm.input.$invalid">Please enter text only!</small>
+            </form>
