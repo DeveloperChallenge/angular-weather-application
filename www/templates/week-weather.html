@@ -1,0 +1,8 @@
+<table class="table  table-stripe">
+    <tr key="$index" ng-repeat="item in ctrlWeek.data">
+        <td>{{ctrlWeek.parseDate(item.dt) | date:'EEEE'}} </td>
+            <td><img ng-src="{{ctrlWeek.getIconImageUrl(item.weather[0].icon)}}" />
+            </td>
+            <td>{{item.temp.day | celsius }}&#176;C</td>
+    </tr>
+</table>
