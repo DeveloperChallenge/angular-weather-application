@@ -29,5 +29,9 @@ angular.module('weatherApp')
 
 		return defer.promise;
 	}
+
+	serveWeather.getImageIcon = function(iconName){
+		return (iconName ? $rootScope.iconUrl + iconName + '.png' : '');
+	}
 	return serveWeather;
 }]);

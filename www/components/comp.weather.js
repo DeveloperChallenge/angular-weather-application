@@ -1,5 +1,5 @@
 var weather = {
-	templateUrl: 'templates/panel-light.html',
+	templateUrl: 'templates/weather.html',
 	bindings:{
 		queryData:'@', 
 		data:'<'
@@ -9,9 +9,8 @@ var weather = {
 }
 
 
-function weatherController($scope,$http, $rootScope, serveWeather){
+function weatherController($scope,$rootScope, serveWeather){
 		var vm = this;
-		vm.testData = 'my data test';
 		vm.data = {};
 		vm.errorMsg  = null;
 
@@ -34,7 +33,7 @@ function weatherController($scope,$http, $rootScope, serveWeather){
 
 
 		vm.getIconImageUrl = function(iconName){
-			return (iconName ? $rootScope.iconUrl + iconName + '.png' : '');
+			return serveWeather.getImageIcon(iconName);
 		}
     }
 

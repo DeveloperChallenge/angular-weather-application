@@ -4,17 +4,25 @@
             {{ctrlForm.errorMsg}}
            </div>
 
-            <form name="queryForm" class="animated fadeIn" 
+            <form name="queryForm" class="animated fadeIn form-inline" 
                     ng-submit="ctrlForm.search({data:ctrlForm.data})" novalidate>
                 <div class="form-group"> 
-                    <input type="text" name="data" 
-                            class="form-control input-lg custom-input" 
+                <div class="input-group">
+                    <input type="text" name="value" 
+                            class="form-control" 
                             ng-model="ctrlForm.data"
                             placeholder="Enter your location"
-                            ng-pattern="/^[a-zA-Z]/"
-                            autocomplete="false"
-                            autosave="false" 
+                            ng-pattern="/^(\D)+$/"
                             required>
+                    <div class="input-group-addon padding-zero">
+                        <button type="submit" class="btn btn-default  custom-btn" ng-disabled="queryForm.$invalid"> 
+                        Search
+                        </button>
+                    </div>
                 </div>
-                <small class="help" ng-show="queryForm.input.$invalid">Please enter text only!</small>
+                </div>
+                
             </form>
+
+
+            <p class="help text-center animated fadeIn" ng-show="queryForm.value.$error.pattern">Please enter text only!</p>

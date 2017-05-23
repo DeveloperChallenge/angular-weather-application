@@ -10,7 +10,7 @@ var weekWeather = {
 	controllerAs: 'ctrlWeek',
 }
 
-function weekWeatherController($rootScope){
+function weekWeatherController($rootScope,serveWeather){
 	var weekCtrl=  this;
 
 	weekCtrl.$postLink = function () {
@@ -22,7 +22,7 @@ function weekWeatherController($rootScope){
 	};
 
 	weekCtrl.getIconImageUrl = function(iconName){
-			return (iconName ? $rootScope.iconUrl + iconName + '.png' : '');
+			return serveWeather.getImageIcon(iconName);
 		}
 		
 	weekCtrl.parseDate = function (time) {
